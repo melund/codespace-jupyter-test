@@ -1,18 +1,11 @@
 {
-	"image": "ghcr.io/anybody/anybodycon:7.4.4-1",
+	"image": "ghcr.io/anybody/anybodycon-devcontainer:7.4.4-3",
   "hostRequirements": {
     "cpus": 4
   },
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/mamba-org/devcontainer-features/micromamba:1": {
-			"channels": "conda-forge",
-			"packages": "python>=3.11 anypytools jupyterlab ipywidgets ipykernel matplotlib tqdm pandas"
-		  }
-	},
   "waitFor": "onCreateCommand",
   "postCreateCommand": "",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
   "customizations": {
     "codespaces": {
       "openFiles": []
@@ -20,7 +13,7 @@
     "vscode": {
       "extensions": [
         "ms-toolsai.jupyter",
-        "ms-python.python",
+        "ms-python.python"
       ]
     }
   }
