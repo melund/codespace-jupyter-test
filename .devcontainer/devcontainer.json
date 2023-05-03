@@ -4,8 +4,15 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
+
+  "features": {
+    "ghcr.io/mamba-org/devcontainer-features/micromamba:1": {
+      //"envFile": "/tmp/specfile.yml"
+      "channels": "conda-forge",
+      "packages": "python>=3.11 anypytools ipykernel"
+    }
+  },
   "postCreateCommand": "",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
   "customizations": {
     "codespaces": {
       "openFiles": []
